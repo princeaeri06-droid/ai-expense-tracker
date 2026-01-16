@@ -1,0 +1,17 @@
+import { Router } from 'express'
+import { login, signup, validateToken } from '../controllers/authController.js'
+import auth from '../middleware/auth.js'
+
+const router = Router()
+
+router.post('/signup', signup)
+router.post('/login', login)
+router.get('/me', auth, validateToken)
+
+export default router
+
+
+
+
+
+

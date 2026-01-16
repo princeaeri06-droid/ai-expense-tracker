@@ -1,0 +1,22 @@
+# Node
+client/node_modules
+server/node_modules
+
+# Logs
+*.log
+
+# Env vars
+server/.env
+
+# Python
+ai/__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+
+
+
+
