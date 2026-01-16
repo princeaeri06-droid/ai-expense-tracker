@@ -260,9 +260,7 @@ export const categoryAPI = {
     return apiRequest(`/api/categories/retrain?force=${force}`, {
       method: 'POST',
     })
-  },
-
-  // Get available categories
+  },  // Get available categories
   getCategories: async () => {
     return apiRequest('/api/categories/categories')
   },  // Bulk categorize expenses
