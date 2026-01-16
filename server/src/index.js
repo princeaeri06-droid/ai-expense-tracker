@@ -70,6 +70,15 @@ app.get('/', (req, res) => {
   })
 })
 
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error('🔴 Error:', err)
+  res.status(err.status || 500).json({
+    error: err.message || 'Internal Server Error',
+    status: err.status || 500,
+  })
+})
+
 const startServer = async () => {
   await connectDB()
   app.listen(PORT, () => {
