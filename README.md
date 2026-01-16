@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Expense Tracker Monorepo
 
 Full MERN + AI starter with three services:
@@ -123,3 +124,7 @@ cp env.template ai/.env             # Railway FastAPI services
 - Add persistence models + validation on the server.
 - Replace dummy AI logic with actual ML/NLP pipelines or third-party API calls.
 
+=======
+# ai-expense-tracker
+AI Expense Tracker - Full Stack App
+>>>>>>> cea7c56f1a7edf91e1c22bfe019001264a46742a
