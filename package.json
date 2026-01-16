@@ -1,5 +1,14 @@
 {
+  "name": "ai-expense-tracker",
+  "private": true,
+  "scripts": {
+    "start": "node server/src/index.js",
+    "build": "npm install --prefix server"
+  },
   "dependencies": {
     "mongoose": "^8.20.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
