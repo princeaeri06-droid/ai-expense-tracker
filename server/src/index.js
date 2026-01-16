@@ -24,7 +24,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 // Security: CORS configuration
 const corsOptions = {
   origin: isProduction 
-    ? process.env.FRONTEND_URL || 'https://your-domain.com'
+    ? (process.env.FRONTEND_URL || 'https://your-domain.com').trim()
     : ['http://localhost:5173', 'http://localhost:3000'],
   credentials: true,
   optionsSuccessStatus: 200
