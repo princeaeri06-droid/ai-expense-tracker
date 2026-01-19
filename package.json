@@ -3,7 +3,11 @@
   "private": true,
   "scripts": {
     "start": "node server/src/index.js",
-    "build": "npm install --prefix server"
+    "dev": "node start.js",
+    "server:dev": "npm run dev --prefix server",
+    "client:dev": "npm run dev --prefix client",
+    "ai:dev": "cd ai && uvicorn unified_service:app --host 0.0.0.0 --port 8000",
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "mongoose": "^8.20.0"
