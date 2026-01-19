@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { authAPI, getAuthToken } from '../utils/api'
 
@@ -11,11 +11,17 @@ const navItems = [
 const AppLayout = () => {
   const navigate = useNavigate()
   const token = getAuthToken()
+  const [isChecking, setIsChecking] = useState(true)
 
   useEffect(() => {
-    // Redirect to login if not authenticated
+    console.log('AppLayout: Checking auth token...', { hasToken: !!token })
+    
     if (!token) {
+      console.log('AppLayout: No token, redirecting to login')
       navigate('/login', { replace: true })
+    } else {
+      console.log('AppLayout: Token found, proceeding')
+      setIsChecking(false)
     }
   }, [token, navigate])
 
@@ -24,9 +30,16 @@ const AppLayout = () => {
     navigate('/login', { replace: true })
   }
 
-  // Don't render anything if not authenticated (redirect will happen)
-  if (!token) {
-    return null
+  // Show loading state while checking auth
+  if (isChecking || !token) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-slate-950">
+        <div className="text-center">
+          <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-slate-700 border-t-sky-400"></div>
+          <p className="text-slate-400">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
