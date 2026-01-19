@@ -1,0 +1,20 @@
+{
+  "envs": [
+    {
+      "key": "JWT_SECRET",
+      "description": "Secret key for JWT token signing (min 32 characters)",
+      "sync": false
+    },
+    {
+      "key": "MONGO_URI",
+      "description": "MongoDB connection string",
+      "sync": false
+    },
+    {
+      "key": "AI_BASE_URL",
+      "description": "Base URL for AI service (e.g., https://your-ai-service.railway.app)",
+      "value": "http://localhost:8000",
+      "sync": false
+    }
+  ]
+}
