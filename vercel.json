@@ -1,11 +1,8 @@
 {
-  "version": 2,
-  "framework": "vite",
-  "installCommand": "npm install --prefix client",
-  "buildCommand": "npm run build --prefix client",
+  "buildCommand": "cd client && npm install && npm run build",
   "outputDirectory": "client/dist",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+  "installCommand": "echo 'Skipping root install'",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
